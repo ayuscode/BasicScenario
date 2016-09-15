@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="Scripts/jquery-3.1.0.js"></script>
+    <!--<script src="Scripts/jquery-3.1.0.min.js"></script>-->
+    <script src="Scripts/js.cookie.js"></script>
+    <script src="Scripts/index.js"></script>
+</head>
+<body>
+    <!-- User sign in-->
+    <div id="userForm">
+        <p>Who are you?</p>
+        <input type="text" id="user" />
+        <input type="password" id="pass" />
+        <button id="signIn">Sign in</button>
+    </div>
+
+    <!-- User info -->
+    <div id="userInfo">
+        <p>Welcome <label id="userName"></label></p>
+        
+        <button id="viewBooked">My books</button>
+        <ul id="bookedList"></ul>
+
+        <button id="viewAllBooked">All books</button>
+        <ul id="allBookedList"></ul>
+    </div>
+
+    <!-- Book Form -->
+    <div id="bookForm">
+        <!-- Booking date -->
+        <div id="bookingDate">
+            <p>What's your preference date?</p>
+            <input type="text" id="date" />
+        </div>
+
+        <!-- Submit -->
+        <div id="submit">
+            <button id="book">Book</button>
+        </div>
+    </div>
+
+    <!-- Response Message -->
+    <div id="responseForm">
+        <label id="response"></label>
+    </div>
+</body>
+</html>

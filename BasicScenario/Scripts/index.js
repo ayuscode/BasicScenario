@@ -81,6 +81,31 @@ function setUserInfo(user)
     $("#userName").text(user);
 }
 
+
+function registerUser(user, password)
+{
+    var user = {
+        userName : user,
+        password : password,
+        confirmPassword : password
+    };
+
+    $.ajax({
+        url: "http://localhost:35853/api/account/register",
+        method: "POST",
+        headers: {
+            "content-type": "application/json",
+        },
+        data: JSON.stringify(user)
+    })
+    .done(function (response) {
+        responseMessage("User sucessfully created. Please enter your credentials to login");
+    })
+    .fail(function (jqXHR, textStatus) {
+        responseMessage("Error registering user: " + jqXHR.responseText);
+    });
+}
+
 function bookingDate(bookingUser, bookingDate) {
     // Send booking date
     // http://localhost:35853/api/booking/book
@@ -210,6 +235,15 @@ function start() {
 
         authorizeUser(user, pass);
     });
+
+    // Handle sign up event
+    $("#signUp").click(function () {
+        var user = $("#user").val();
+        var pass = $("#pass").val();
+
+        registerUser(user, pass);
+    });
+
 
     // Handle book event
     $("#book").click(function () {

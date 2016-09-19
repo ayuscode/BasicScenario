@@ -198,6 +198,7 @@
     <Content Include="Scripts\jquery-3.1.0.slim.js" />
     <Content Include="Scripts\jquery-3.1.0.slim.min.js" />
     <Content Include="Scripts\js.cookie.js" />
+    <Content Include="UI-Structure.txt" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

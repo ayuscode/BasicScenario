@@ -5,7 +5,6 @@ using BasicScenario.App_Start;
 using BasicScenario.Server.Auth;
 using Serilog;
 
-
 [assembly: OwinStartup(typeof(BasicScenario.Startup))]
 
 namespace BasicScenario

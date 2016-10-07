@@ -5,5 +5,9 @@ angular.
         controller : [function()
         {
             this.Message = 'Here you can register';
+
+            this.Register = function() {
+                this.Message = 'Register completed';
+            };
         }]
     });

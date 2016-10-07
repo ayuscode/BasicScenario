@@ -178,9 +178,52 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Readme\Elmah.txt" />
+    <Content Include="Client\app\app.config.js" />
+    <Content Include="Client\app\app.css" />
+    <Content Include="Client\app\app.module.js" />
+    <Content Include="Client\app\core\api\account\account.module.js" />
+    <Content Include="Client\app\core\api\account\account.service.js" />
+    <Content Include="Client\app\core\api\api.module.js" />
+    <Content Include="Client\app\core\auth\auth.module.js" />
+    <Content Include="Client\app\core\auth\auth.service.js" />
+    <Content Include="Client\app\core\auth\auth.service.spec.js" />
+    <Content Include="Client\app\core\core.module.js" />
+    <Content Include="Client\app\index.html" />
+    <Content Include="Client\app\login\login.component.js" />
+    <Content Include="Client\app\login\login.component.spec.js" />
+    <Content Include="Client\app\login\login.module.js" />
+    <Content Include="Client\app\login\login.template.html" />
+    <Content Include="Client\app\register\register.component.js" />
+    <Content Include="Client\app\register\register.component.spec.js" />
+    <Content Include="Client\app\register\register.module.js" />
+    <Content Include="Client\app\register\register.template.html" />
+    <Content Include="Client\e2e-tests\protractor.conf.js" />
+    <Content Include="Client\e2e-tests\scenarios.js" />
+    <Content Include="Client\karma.conf.js" />
+    <Content Include="Client\scripts\private\old\ScrapeData.js" />
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-3.1.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.0.min.map" />
+    <Content Include="Client\.bowerrc" />
+    <Content Include="Client\.jshintrc" />
+    <Content Include="Client\.travis.yml" />
+    <Content Include="Client\bower.json" />
+    <Content Include="Client\e2e-tests\README.md" />
+    <Content Include="Client\LICENSE" />
+    <Content Include="Client\package.json" />
+    <Content Include="Client\README.md" />
+    <Content Include="Client\scripts\private\jenkins.sh" />
+    <Content Include="Client\scripts\private\old\format-json.sh" />
+    <Content Include="Client\scripts\private\old\goto_step.bat" />
+    <Content Include="Client\scripts\private\old\goto_step.sh" />
+    <Content Include="Client\scripts\private\old\README.md" />
+    <Content Include="Client\scripts\private\old\snapshot.sh" />
+    <Content Include="Client\scripts\private\push-to-github.sh" />
+    <Content Include="Client\scripts\private\README.md" />
+    <Content Include="Client\scripts\private\retag.sh" />
+    <Content Include="Client\scripts\private\test-all.sh" />
+    <Content Include="Client\scripts\private\update-gh-pages.sh" />
+    <Content Include="Client\scripts\update-repo.sh" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -225,7 +268,9 @@
     <Compile Include="Server\Storage\IBookingStorage.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Client\app\core\api\booking\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

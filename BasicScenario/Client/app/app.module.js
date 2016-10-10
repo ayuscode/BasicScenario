@@ -4,5 +4,6 @@ angular.
             ['ngRoute',
              'core', 
              'login',
-             'register'
+             'register',
+             'api'
             ]);

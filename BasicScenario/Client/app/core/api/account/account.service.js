@@ -1,24 +1,28 @@
 angular.
     module('account').
-    service('accountSvc', ['$http', 'authSvc', function($http, authSvc){
+    service('accountSvc', ['$http', 'authSvc', '$q', function($http, authSvc, $q){
         var baseUrl = 'http://localhost:35853/api/account/';
 
-        //$http.post('/someUrl', data, config).then(successCallback, errorCallback);
-        this.register = function(user, password)
+        this.register = function(user, password, confirmPassword)
         {
-            var UserModel = { UserName : user, Pasword : password, ConfirmPassword: password };
+            var self = this;
+            var deferred = $q.defer();
+
+            var UserModel = { UserName : user, Pasword : password, ConfirmPassword: confirmPassword };
             $http.post(baseUrl + 'register', UserModel).then(
                 // Success callback
                 function(response)
                 {
-                    return true;
+                    deferred.resolve(true);
                 },
                 // Error callback
                 function(response)
                 {
-                    return false;
+                    deferred.resolve(false);
                 }
             );
+
+            return deferred.promise;
         }
 
         this.getUser = function()

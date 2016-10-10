@@ -1,2 +1,9 @@
 Register a new user:
-<h6>{{$ctrl.Messge}}</h6>
+<p>Please, fill in the data:</p>
+<table>
+    <tr><td>Username:</td><td><input type="text" ng-model="$ctrl.User"/></td></tr>
+    <tr><td>Password:</td><td><input type="password" ng-model="$ctrl.Password"/></td></tr>
+    <tr><td>Confirm password:</td><td><input type="password" ng-model="$ctrl.ConfirmPassword"/></td></tr>
+</table>
+<button ng-click="$ctrl.Register()">Register</button>
+<p>{{$ctrl.Message}}</p>

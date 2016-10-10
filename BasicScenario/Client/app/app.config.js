@@ -10,5 +10,8 @@ angular.
             }).
             when('/booking', {
                 template: '<h6>booking construction page</h6>'
+            }).
+            when('/newregister',{
+                template: '<register></register>'
             });            
     }]);

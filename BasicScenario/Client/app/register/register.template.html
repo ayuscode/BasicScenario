@@ -1,9 +1,24 @@
-Register a new user:
-<p>Please, fill in the data:</p>
-<table>
-    <tr><td>Username:</td><td><input type="text" ng-model="$ctrl.User"/></td></tr>
-    <tr><td>Password:</td><td><input type="password" ng-model="$ctrl.Password"/></td></tr>
-    <tr><td>Confirm password:</td><td><input type="password" ng-model="$ctrl.ConfirmPassword"/></td></tr>
-</table>
-<button ng-click="$ctrl.Register()">Register</button>
-<p>{{$ctrl.Message}}</p>
+<form name="form">
+    <p>Please, fill in the data:</p>
+    <table>
+        <tr>
+            <td>Username:</td>
+            <td><input type="text" name="user" ng-model="$ctrl.User" required /></td>
+            <td>
+                <div ng-show="form.$submitted || form.user.$touched">
+                    <div ng-show="form.user.$error.required">Name is required</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" name="pass" ng-model="$ctrl.Password" required min="6" /></td>
+        </tr>
+        <tr>
+            <td>Confirm password:</td>
+            <td><input type="password" name="confirm" ng-model="$ctrl.ConfirmPassword" required min="6" /></td>
+        </tr>
+    </table>
+    <input type="submit" ng-click="$ctrl.Register()" value="Register" />
+    <p>{{$ctrl.Message}}</p>
+</form>

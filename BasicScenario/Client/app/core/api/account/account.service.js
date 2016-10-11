@@ -8,7 +8,7 @@ angular.
             var self = this;
             var deferred = $q.defer();
 
-            var UserModel = { UserName : user, Pasword : password, ConfirmPassword: confirmPassword };
+            var UserModel = { UserName : user, Password : password, ConfirmPassword: confirmPassword };
             $http.post(baseUrl + 'register', UserModel).then(
                 // Success callback
                 function(response)
@@ -18,7 +18,7 @@ angular.
                 // Error callback
                 function(response)
                 {
-                    deferred.resolve(false);
+                    deferred.reject(response);
                 }
             );
 

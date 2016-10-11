@@ -16,10 +16,13 @@ angular.
                         else   
                             self.Message = 'Unable to register';
                     },
-                    function (response){
-                        self.Message = 'Sorry, try it again later';
+                    function (response) {
+                        console.log(response);
+                        self.Message = response;
                     }
                 );                 
             };
+
+            
         }]
     });

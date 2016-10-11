@@ -341,6 +341,7 @@
     <Content Include="Client\app\bower_components\jquery\src\wrap.js" />
     <Content Include="Client\app\core\api\account\account.module.js" />
     <Content Include="Client\app\core\api\account\account.service.js" />
+    <Content Include="Client\app\core\api\account\account.service.spec.js" />
     <Content Include="Client\app\core\api\api.module.js" />
     <Content Include="Client\app\core\auth\auth.module.js" />
     <Content Include="Client\app\core\auth\auth.service.js" />

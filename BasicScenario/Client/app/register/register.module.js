@@ -1,2 +1,2 @@
 angular.
-    module('register',['account']);
+    module('register',['account', 'core']);

@@ -19,7 +19,7 @@ describe('Auth Service', function()
         authSvc.clear();
     });
 
-    it('Validate User', function()
+    it('Auth Service:: Validate User', function()
     {
         var validate = authSvc.validate('user', 'password');
 
@@ -37,7 +37,7 @@ describe('Auth Service', function()
         $httpBackend.verifyNoOutstandingRequest();
     });
 
-    it('Clear token validation', function()
+    it('Auth Service:: Clear token validation', function()
     {
         authSvc.clear();
         var token = authSvc.getToken();

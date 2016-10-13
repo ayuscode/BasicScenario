@@ -32,10 +32,6 @@ namespace BasicScenario
             Log.Logger = new LoggerConfiguration()
                 .ReadFrom.AppSettings()
                 .CreateLogger();
-
-
         }
-
-        
     }
 }

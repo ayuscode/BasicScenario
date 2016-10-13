@@ -1,0 +1,24 @@
+<form name="form" class="css-form" ng-hide="$ctrl.IsRegistered">
+    <p>Please, fill in the data:</p>
+    <table>
+        <tr>
+            <td>Username:</td>
+            <td><input type="text" name="user" ng-model="$ctrl.User" required /></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" name="pass" ng-model="$ctrl.Password" required ng-minlength="6" /></td>
+        </tr>
+        <tr>
+            <td>Confirm password:</td>
+            <td><input type="password" name="confirm" ng-model="$ctrl.ConfirmPassword" required ng-minlength="6" compare="{{$ctrl.Password}}" /></td>
+        </tr>
+    </table>
+    <br/>
+    <p>{{$ctrl.Message}}</p>
+    <input type="submit" name="register" ng-click="$ctrl.Register()" value="Register" ng-show="form.user.$valid && form.pass.$valid && form.confirm.$valid" />
+</form>
+<p ng-show="$ctrl.IsRegistered" name="registered">
+    Thank you for registering. Your user was successfully created.<br/>
+    Please, <a href="/">log in</a> to start.
+</p>

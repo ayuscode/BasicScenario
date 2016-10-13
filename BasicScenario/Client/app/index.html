@@ -1,36 +1,40 @@
 ﻿<!doctype html>
 <html lang="en" ng-app="basicScenario">
-  <head>
+<head>
     <meta charset="utf-8">
     <title>test</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="app.css" />
-  </head>
-  <body>
-      <div ng-view></div>
-      <footer>@2016 - static void</footer>
-  </body>
+</head>
+<body>
+    <div ng-view></div>
+    <footer>@2016 - static void</footer>
+</body>
 
-  <script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="bower_components/angular-resource/angular-resource.js"></script>
-  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
 
-  <script src="app.module.js"></script>
-  <script src="app.config.js"></script>
-  <script src="core/core.module.js"></script>
-  <script src="core/auth/auth.module.js"></script>
-  <script src="core/auth/auth.service.js"></script>
+<script src="app.module.js"></script>
+<script src="app.config.js"></script>
+<script src="directives/compare.js"></script>
+<script src="core/core.module.js"></script>
+<script src="core/core.service.js"></script>
+<script src="core/auth/auth.module.js"></script>
+<script src="core/auth/auth.service.js"></script>
 
-  <script src="core/api/api.module.js"></script>
-  <script src="core/api/account/account.module.js"></script>
-  <script src="core/api/account/account.service.js"></script>
+<script src="core/api/api.module.js"></script>
+<script src="core/api/account/account.module.js"></script>
+<script src="core/api/account/account.service.js"></script>
+<script src="core/api/booking/booking.module.js"></script>
+<script src="core/api/booking/booking.service.js"></script>
 
-  <script src="login/login.module.js"></script>
-  <script src="login/login.component.js"></script>
-  <script src="register/register.module.js"></script>
-  <script src="register/register.component.js"></script>
+<script src="features/login/login.module.js"></script>
+<script src="features/login/login.component.js"></script>
+<script src="features/register/register.module.js"></script>
+<script src="features/register/register.component.js"></script>
+<script src="features/reservation/reservation.component.js"></script>
 
-  
 </html>

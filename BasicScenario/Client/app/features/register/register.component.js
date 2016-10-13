@@ -1,27 +1,28 @@
 angular.
     module('register').
     component('register', {
-        templateUrl : 'register/register.template.html',
-        controller : ['accountSvc', function(accountSvc)
+        templateUrl : 'features/register/register.template.html',
+        controller : ['accountSvc','coreSvc', function(accountSvc, coreSvc)
         {
             var self = this;
 
             this.Message = '';
+            this.IsRegistered = false;
 
             this.Register = function() {
                 accountSvc.register(this.User, this.Password, this.ConfirmPassword).then(
                     function(response){
                         if (response)
-                            self.Message = 'Thank you and welcome to our site';
+                            self.IsRegistered = true;
                         else   
-                            self.Message = 'Unable to register';
+                            self.Message = 'Unexpected error when registering. Please, try again';
                     },
                     function (response) {
-                        console.log(response);
-                        self.Message = response;
+                        self.Message = 'Unable to register:' + coreSvc.parseResponse(response);
                     }
                 );                 
             };
+
 
             
         }]

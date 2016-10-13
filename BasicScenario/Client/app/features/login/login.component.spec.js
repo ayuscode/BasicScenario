@@ -42,7 +42,7 @@ describe('Login', function()
                 }));
 
             it('Redirect when user is validated', function() {
-                expect($location.url()).toBe('/booking');
+                expect($location.url()).toBe('/reservation');
             });
         });
 
@@ -54,7 +54,7 @@ describe('Login', function()
 
             $rootScope.$apply();
             
-            expect($location.url()).toBe('/booking');
+            expect($location.url()).toBe('/reservation');
             
         })
     });

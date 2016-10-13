@@ -20,5 +20,31 @@ describe('basicScenario App', function() {
 
           expect(browser.getLocationAbsUrl()).toBe('/booking');
         });
+
+        
+    });
+
+
+    describe('Scenario 2: Register successful', function () {
+        beforeEach(function () {
+            browser.get('/#!/newregister');
+        });
+
+        it('Register success using credentials', function () {
+            var user = element(by.model('$ctrl.User'));
+            var pass = element(by.model('$ctrl.Password'));
+            var confirm = element(by.model('$ctrl.ConfirmPassword'));
+            var registerButton = element(by.name('register'));
+            var registered = element(by.name('registered'));
+
+            var username = 'user' + Date.now();
+            user.sendKeys(username);
+            pass.sendKeys('password');
+            confirm.sendKeys('password');
+            registerButton.click();
+
+            expect(registered.isDisplayed()).toBeTruthy();
+        });
+
     });
 });

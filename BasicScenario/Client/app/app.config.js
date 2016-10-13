@@ -8,8 +8,8 @@ angular.
             {
                 template : '<login></login>'
             }).
-            when('/booking', {
-                template: '<h6>booking construction page</h6>'
+            when('/reservation', {
+                template: '<reservation></reservation>'
             }).
             when('/newregister',{
                 template: '<register></register>'

@@ -26,7 +26,7 @@ describe('Register', function()
             
         }));
 
-        it('RegisterController: Register is correct', function()
+        it('Register is correct', function()
         {
             ctrl.User = 'user';
             ctrl.Password = 'password';
@@ -35,8 +35,19 @@ describe('Register', function()
 
             $rootScope.$apply();
 
-            expect(ctrl.Message).toBe('Thank you and welcome to our site');
+            expect(ctrl.IsRegistered).toBe(true);
         });
+
+        it('Register is not correct', function()
+        {
+            ctrl.User = '';
+            ctrl.Password = '12345';
+            ctrl.ConfirmPassword = '1234';
+
+            $rootScope.$apply();
+
+            expect(ctrl.IsRegistered).toBe(false);
+        })
     });
 
 });

@@ -1,2 +1,2 @@
 angular.
-    module('api', ['account']);
+    module('api', ['account', 'booking']);

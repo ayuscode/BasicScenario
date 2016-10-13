@@ -343,19 +343,30 @@
     <Content Include="Client\app\core\api\account\account.service.js" />
     <Content Include="Client\app\core\api\account\account.service.spec.js" />
     <Content Include="Client\app\core\api\api.module.js" />
+    <Content Include="Client\app\core\api\booking\booking.module.js" />
+    <Content Include="Client\app\core\api\booking\booking.service.js" />
+    <Content Include="Client\app\core\api\booking\booking.service.spec.js" />
     <Content Include="Client\app\core\auth\auth.module.js" />
     <Content Include="Client\app\core\auth\auth.service.js" />
     <Content Include="Client\app\core\auth\auth.service.spec.js" />
     <Content Include="Client\app\core\core.module.js" />
+    <Content Include="Client\app\core\core.service.js" />
+    <Content Include="Client\app\directives\compare.js" />
+    <Content Include="Client\app\features\bookDate\bookDate.component.js" />
+    <Content Include="Client\app\features\bookDate\bookDate.component.spec.js" />
+    <Content Include="Client\app\features\bookDate\bookDate.module.js" />
+    <Content Include="Client\app\features\bookDate\bookDate.template.html" />
+    <Content Include="Client\app\features\reservation\reservation.component.js" />
+    <Content Include="Client\app\features\reservation\reservation.template.html" />
     <Content Include="Client\app\index.html" />
-    <Content Include="Client\app\login\login.component.js" />
-    <Content Include="Client\app\login\login.component.spec.js" />
-    <Content Include="Client\app\login\login.module.js" />
-    <Content Include="Client\app\login\login.template.html" />
-    <Content Include="Client\app\register\register.component.js" />
-    <Content Include="Client\app\register\register.component.spec.js" />
-    <Content Include="Client\app\register\register.module.js" />
-    <Content Include="Client\app\register\register.template.html" />
+    <Content Include="Client\app\features\login\login.component.js" />
+    <Content Include="Client\app\features\login\login.component.spec.js" />
+    <Content Include="Client\app\features\login\login.module.js" />
+    <Content Include="Client\app\features\login\login.template.html" />
+    <Content Include="Client\app\features\register\register.component.js" />
+    <Content Include="Client\app\features\register\register.component.spec.js" />
+    <Content Include="Client\app\features\register\register.module.js" />
+    <Content Include="Client\app\features\register\register.template.html" />
     <Content Include="Client\e2e-tests\protractor.conf.js" />
     <Content Include="Client\e2e-tests\scenarios.js" />
     <Content Include="Client\karma.conf.js" />
@@ -573,9 +584,7 @@
     <Compile Include="Server\Storage\IBookingStorage.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Client\app\core\api\booking\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

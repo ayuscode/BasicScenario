@@ -1,13 +1,13 @@
 angular.
     module('login').
     component('login', {
-        templateUrl : 'login/login.template.html',
+        templateUrl : 'features/login/login.template.html',
         controller: ['$location', 'authSvc',function LoginController($location, authSvc)
         {
             if (authSvc.isAuthenticated())
-                $location.path('/booking');
+                $location.path('/reservation');
 
-            this.Message = "Please, enter your credentials";
+            this.Message = '';
 
             this.Login = function()
             {
@@ -17,7 +17,7 @@ angular.
                 function (response)
                 {
                     if (response)
-                        $location.path('/booking');
+                        $location.path('/reservation');
                     else
                         self.Message = "Invalid user. Please, enter a valid credentials";
                 }, 

@@ -3,18 +3,11 @@
     service('bookingSvc', ['$http', '$q', 'authSvc', function ($http, $q, authSvc) {
         var baseUrl = 'http://localhost:35853/api/booking/';
 
-        this.getReservations = function () {
+        this.getUserReservations = function () {
             var deferred = $q.defer();
 
             if (authSvc.isAuthenticated()) {
-                $http.get(baseUrl,
-                {
-                    headers: {
-                        "accept": "application/json",
-                        "content-type": "application/json",
-                        "authorization": "Bearer " + authSvc.getToken()
-                    }
-                }).then(
+                $http.get(baseUrl + 'user').then(
                     function (response) {
                         deferred.resolve(response);
                     },

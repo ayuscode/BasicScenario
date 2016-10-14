@@ -2,8 +2,6 @@
     beforeEach(module('auth'));
     beforeEach(module('booking'));
     
-
-    
     var $q;
     var $httpBackend;
     var bookingSvc;
@@ -13,7 +11,7 @@
         $q = _$q_;
         bookingSvc = _bookingSvc_;
         $httpBackend = _$httpBackend_;
-        $httpBackend.expectGET('http://localhost:35853/api/booking/').respond(200, ['2016-10-03', '2016-10-01', '2016-10-02']);
+        $httpBackend.expectGET('http://localhost:35853/api/booking/user').respond(200, ['2016-10-03', '2016-10-01', '2016-10-02']);
 
         authSvc = _authSvc_;
         spyOn(authSvc,'isAuthenticated').and.callFake(function () {
@@ -22,7 +20,7 @@
     }));
 
     it('Booking Get All Dates', function () {
-        bookingSvc.getReservations().then(function (response) {
+        bookingSvc.getUserReservations().then(function (response) {
             expect(response.data.length).toBe(3);
         });
 

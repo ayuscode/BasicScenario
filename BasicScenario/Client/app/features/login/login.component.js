@@ -2,7 +2,7 @@ angular.
     module('login').
     component('login', {
         templateUrl : 'features/login/login.template.html',
-        controller: ['$location', 'authSvc',function LoginController($location, authSvc)
+        controller: ['$location', 'authSvc', 'accountSvc' ,function LoginController($location, authSvc, accountSvc)
         {
             if (authSvc.isAuthenticated())
                 $location.path('/reservation');
@@ -13,7 +13,7 @@ angular.
             {
                 var self = this;
 
-                authSvc.validate(self.User, self.Password).then(
+                accountSvc.validate(self.User, self.Password).then(
                 function (response)
                 {
                     if (response)

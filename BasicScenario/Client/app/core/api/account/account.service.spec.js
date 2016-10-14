@@ -42,5 +42,40 @@ describe('Account Service', function () {
         var user = accountSvc.getUser();
         expect(user).toBe('Not Authenticated');
     });
+});
 
+describe('Account::Validation Service', function () {
+    var $httpBackend;
+    var accountSvc;
+    var authSvc;
+
+    beforeEach(module('account'));
+    beforeEach(module('auth'));
+
+    beforeEach(inject(function (_$httpBackend_, _accountSvc_, _authSvc_) {
+        $httpBackend = _$httpBackend_;
+        $httpBackend.expectPOST('http://localhost:35853/token').respond(200, { expires_in: 100, access_token: 'TESTING' });
+        accountSvc = _accountSvc_;
+        authSvc = _authSvc_;
+    }));
+
+    afterEach(function () {
+        $httpBackend.verifyNoOutstandingRequest();
+    });
+
+    it('Validate User', function () {
+        var validate = accountSvc.validate('user', 'password');
+
+        validate.then(function (response) {
+            expect(response).toBe(true);
+        });
+
+        $httpBackend.flush();
+
+        var token = authSvc.getToken();
+        expect(token).toBe('TESTING');
+
+        $httpBackend.verifyNoOutstandingExpectation();
+        $httpBackend.verifyNoOutstandingRequest();
+    });
 });

@@ -2,13 +2,14 @@ describe('Login', function()
 {
     // Load the module
     beforeEach(module('core'));
+    beforeEach(module('api'));
     beforeEach(module('login'));
 
     describe('LoginController', function()
     {
         var ctrl;
         var $location;
-        var authSvc;
+        var accountSvc;
         var $q;
         var $rootScope;
 
@@ -20,9 +21,9 @@ describe('Login', function()
         }));
 
         // Mock the authSvc and get the controller 
-        beforeEach(inject(function($componentController, _authSvc_){
-            authSvc = _authSvc_;
-            spyOn(authSvc, 'validate').and.callFake(function(user, password)
+        beforeEach(inject(function($componentController, _accountSvc_){
+            accountSvc = _accountSvc_;
+            spyOn(accountSvc, 'validate').and.callFake(function (user, password)
             {
                 var deferred = $q.defer();
                 deferred.resolve(true);               

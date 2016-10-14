@@ -10,7 +10,7 @@
                 var self = this;
                 self.reservations.length = 0;
 
-                bookingSvc.getReservations().then(
+                bookingSvc.getUserReservations().then(
                     function (response) {
                         self.reservations = response.data;
                     },

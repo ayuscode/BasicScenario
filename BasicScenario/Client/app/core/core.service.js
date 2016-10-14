@@ -1,6 +1,7 @@
 ﻿angular.
     module('core').
     factory('coreSvc', function () {
+        // Here we can add some code (factory vs service)
         return {
             parseResponse : function(response)
             {

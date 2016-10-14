@@ -1,6 +1,8 @@
 angular.
     module('basicScenario').
-    config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider){
+    config(['$locationProvider', '$routeProvider','$httpProvider', function($locationProvider, $routeProvider, $httpProvider){
+        $httpProvider.interceptors.push('httpInterceptor');
+
         $locationProvider.hashPrefix('!');
 
         $routeProvider.

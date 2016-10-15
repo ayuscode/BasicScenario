@@ -1,2 +1,2 @@
 ﻿angular.
-    module('bookDate', []);
+    module('bookdate', ['api']);

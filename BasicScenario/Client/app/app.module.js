@@ -4,5 +4,6 @@ angular.
              'core', 
              'login',
              'register',
-             'api'
+             'api',
+             'bookdate'
             ]);

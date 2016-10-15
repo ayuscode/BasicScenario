@@ -23,5 +23,25 @@
             return deferred.promise;
         }
 
+        this.bookDate = function(date){
+            var deferred = $q.defer();
+
+            if (authSvc.isAuthenticated()){
+                $http.post(baseUrl + 'book', date).then(
+                    function(){
+                        deferred.resolve(true);
+                    },
+                    function(response){
+                        deferred.reject(response);
+                    }
+                );
+            }
+            else{
+                deferred.reject(false);
+            }
+
+            return deferred.promise;
+        }
+
     }]);
     

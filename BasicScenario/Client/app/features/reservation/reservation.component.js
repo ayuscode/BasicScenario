@@ -2,7 +2,11 @@
     module('basicScenario').
     component('reservation', {
         templateUrl: 'features/reservation/reservation.template.html',
-        controller: ['coreSvc', 'bookingSvc', function (coreSvc, bookingSvc) {
+        controller: ['$location', 'authSvc', 'coreSvc', 'bookingSvc', function ($location, authSvc, coreSvc, bookingSvc) {
+            if (!authSvc.isAuthenticated()){
+                $location.path('/');
+            }
+            
             this.reservations = [];
 
             this.updateReservations = function()

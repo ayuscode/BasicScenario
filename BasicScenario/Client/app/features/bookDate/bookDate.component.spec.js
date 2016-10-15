@@ -1,21 +1,18 @@
 ﻿describe('BookDate', function () {
-    beforeEach(module('bookDate'));
+    beforeEach(module('bookdate'));
 
     describe('BookDate Controller', function () {
         var ctrl;
         var $rootScope;
 
         beforeEach(inject(function ($componentController, _$rootScope_) {
-            ctrl = $componentController('bookDate');
+            ctrl = $componentController('bookdate');
             $rootScope = _$rootScope_;
         }));
 
-        it('Message should be funny', function () {
-            expect(ctrl.Message).toBe('reserved system');
-        });
 
         it(':: Booking date when isAuthenticated', function () {
-            ctrl.BookingDate = Date();
+            ctrl.Date = new Date(Date.now());
             ctrl.Book();
 
             $rootScope.$apply();

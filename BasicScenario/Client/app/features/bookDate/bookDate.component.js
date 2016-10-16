@@ -13,7 +13,8 @@
                 bookingSvc.bookDate(this.Date).then(
                     function(response){
                         self.BookSuccess = true;
-                        self.onBook();
+                        if (self.onBook)
+                            self.onBook();
                     },
                     function(response){
                         self.Message = coreSvc.parseResponse(response);

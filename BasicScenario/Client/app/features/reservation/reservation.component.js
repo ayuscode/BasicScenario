@@ -3,10 +3,18 @@
     component('reservation', {
         templateUrl: 'features/reservation/reservation.template.html',
         controller: ['$location', 'authSvc', 'coreSvc', 'bookingSvc', function ($location, authSvc, coreSvc, bookingSvc) {
-            if (!authSvc.isAuthenticated()){
-                $location.path('/');
+            //if (!authSvc.isAuthenticated()){
+            //    $location.path('/');
+            //}
+            
+            this.showAll = false;
+            this.toggleMessage = 'Show all reservations';
+            this.toggleShowAll = function () {
+                this.showAll = !this.showAll;
+                this.toggleMessage = (this.showAll) ? 'Hide reservations' : 'Show all reservations';
             }
             
+
             this.reservations = [];
 
             this.updateReservations = function()
@@ -19,7 +27,7 @@
                         self.reservations = response.data;
                     },
                     function (response) {
-                        this.Message = coreSvc.parseResponse(response);
+                        self.Message = coreSvc.parseResponse(response);
                     });
             }
             

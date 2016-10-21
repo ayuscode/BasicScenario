@@ -1,0 +1,5 @@
+﻿<p>Total reservations: {{$ctrl.reservations.length}}</p>
+<ul>
+    <li ng-repeat="item in $ctrl.reservations">{{item | date : 'dd/MM/yyyy'}}</li>
+</ul>
+<p>{{$ctrl.Message}}</p>

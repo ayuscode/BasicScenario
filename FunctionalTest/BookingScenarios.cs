@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Collections.Generic;
 using System.Linq;
-
+using BasicScenario.Server.Models;
 
 namespace FunctionalTest
 {
@@ -25,8 +25,8 @@ namespace FunctionalTest
             // Assert
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
 
-            var content = await response.Content.ReadAsAsync<bool>();
-            Assert.AreEqual(true, content);
+            var content = await response.Content.ReadAsAsync<BookResponse>();
+            Assert.AreEqual(true, content.IsSuccess);
         }
 
         [TestMethod]
@@ -42,8 +42,8 @@ namespace FunctionalTest
             // Assert
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
 
-            var content = await response.Content.ReadAsAsync<bool>();
-            Assert.AreEqual(false, content);
+            var content = await response.Content.ReadAsAsync<BookResponse>();
+            Assert.AreEqual(false, content.IsSuccess);
         }
 
         [TestMethod]
@@ -61,8 +61,8 @@ namespace FunctionalTest
             // Assert
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
 
-            var content = await response.Content.ReadAsAsync<bool>();
-            Assert.AreEqual(true, content);
+            var content = await response.Content.ReadAsAsync<BookResponse>();
+            Assert.AreEqual(true, content.IsSuccess);
 
             // Second booking with the same date
 
@@ -72,8 +72,8 @@ namespace FunctionalTest
             // Assert
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
 
-            content = await response.Content.ReadAsAsync<bool>();
-            Assert.AreEqual(false, content);
+            content = await response.Content.ReadAsAsync<BookResponse>();
+            Assert.AreEqual(false, content.IsSuccess);
         }
 
         [TestMethod]
@@ -91,8 +91,8 @@ namespace FunctionalTest
             // Assert
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
 
-            var content = await response.Content.ReadAsAsync<bool>();
-            Assert.AreEqual(true, content);
+            var content = await response.Content.ReadAsAsync<BookResponse>();
+            Assert.AreEqual(true, content.IsSuccess);
 
             // Check booked dates
             var testUrlUser = "/api/booking/user";

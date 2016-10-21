@@ -10,10 +10,12 @@
             this.BookSuccess = false;
 
             this.Book = function () {
+                this.BookSuccess = false;
                 bookingSvc.bookDate(this.Date).then(
-                    function(response){
-                        self.BookSuccess = true;
-                        if (self.onBook)
+                    function(data){
+                        self.BookSuccess = data.IsSuccess;
+                        self.Message = data.Message;
+                        if (self.BookSuccess && self.onBook)
                             self.onBook();
                     },
                     function(response){

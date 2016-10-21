@@ -21,6 +21,10 @@
                     return messages;
                 }
 
+                if (response.data && response.data.Message) {
+                    return response.data.Message + ': ' + response.data.MessageDetail;
+                }
+
                 return 'Unexpected error';
             }
         }

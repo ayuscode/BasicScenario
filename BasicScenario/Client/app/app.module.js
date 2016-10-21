@@ -5,5 +5,6 @@ angular.
              'login',
              'register',
              'api',
-             'bookdate'
+             'bookdate',
+             'booklist'
             ]);

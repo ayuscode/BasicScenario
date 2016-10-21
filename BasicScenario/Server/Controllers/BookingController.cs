@@ -60,7 +60,7 @@ namespace BasicScenario.Server.Controllers
 
             var result = await _bookingBusiness.Book(new Models.Book { User = User.Identity.Name, Date = date });
 
-            return Ok(result.IsSuccess);
+            return Ok(result);
         }
 
         [Route("api/booking/user")]

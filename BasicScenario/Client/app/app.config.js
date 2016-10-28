@@ -15,5 +15,9 @@ angular.
             }).
             when('/newregister',{
                 template: '<register></register>'
-            });            
+            }).
+            otherwise({
+                template : '<login></login>'
+            }
+            );            
     }]);

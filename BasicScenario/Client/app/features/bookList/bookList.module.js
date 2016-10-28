@@ -1,2 +1,2 @@
 ﻿angular.
-    module('booklist', ['api']);
+    module('booklist', ['api', 'core']);

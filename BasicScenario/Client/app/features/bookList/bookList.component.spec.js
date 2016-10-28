@@ -9,26 +9,24 @@
         var $q;
 
         beforeEach(inject(function ($componentController, _$rootScope_, _$q_, _bookingSvc_) {
-            ctrl = $componentController('booklist');
-            $rootScope = _$rootScope_;
             bookingSvc = _bookingSvc_;
+            $rootScope = _$rootScope_;
             $q = _$q_;
-            spyOn(bookingSvc, 'getAllReservations').and.callFake(function (date) {
+
+            spyOn(bookingSvc, 'getAllReservations').and.callFake(function () {
                 var deferred = $q.defer();
-                deferred.resolve(['2016-10-17','2016-10-18']);
+                deferred.resolve({ data: ['2016-10-17', '2016-10-18'] });
                 return deferred.promise;
             })
+            ctrl = $componentController('booklist');
         }));
 
 
         it(':: Get All Reservations', function () {
-            ctrl.Date = new Date(Date.now());
-            ctrl.Book();
-
+            ctrl.updateAllReservations();
             $rootScope.$apply();
 
-            expect(ctrl.BookSuccess).toBe(true);
-
+            expect(ctrl.reservations.length).toBe(2);
         });
 
     });

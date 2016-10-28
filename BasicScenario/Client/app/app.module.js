@@ -1,10 +1,12 @@
 angular.
-    module('basicScenario', 
+    module('basicScenario',
             ['ngRoute',
-             'core', 
+             'core',
              'login',
              'register',
              'api',
              'bookdate',
-             'booklist'
+             'booklist',
+             'messages',
+             'user'
             ]);

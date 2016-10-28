@@ -351,10 +351,16 @@
     <Content Include="Client\app\core\auth\auth.service.spec.js" />
     <Content Include="Client\app\core\core.module.js" />
     <Content Include="Client\app\core\core.service.js" />
+    <Content Include="Client\app\core\user\user.component.js" />
+    <Content Include="Client\app\core\user\user.module.js" />
+    <Content Include="Client\app\core\user\user.template.html" />
     <Content Include="Client\app\features\bookList\bookList.component.js" />
     <Content Include="Client\app\features\bookList\bookList.component.spec.js" />
     <Content Include="Client\app\features\bookList\bookList.module.js" />
     <Content Include="Client\app\features\bookList\bookList.template.html" />
+    <Content Include="Client\app\core\messages\messages.component.js" />
+    <Content Include="Client\app\core\messages\messages.module.js" />
+    <Content Include="Client\app\core\messages\messages.template.html" />
     <Content Include="Client\app\infrastructure\directives\compare.js" />
     <Content Include="Client\app\features\bookDate\bookDate.component.js" />
     <Content Include="Client\app\features\bookDate\bookDate.component.spec.js" />

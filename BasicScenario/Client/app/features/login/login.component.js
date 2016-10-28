@@ -2,7 +2,7 @@ angular.
     module('login').
     component('login', {
         templateUrl : 'features/login/login.template.html',
-        controller: ['$location', 'authSvc', 'accountSvc' ,function LoginController($location, authSvc, accountSvc)
+        controller: ['$location', 'authSvc', 'accountSvc', 'coreSvc' ,function LoginController($location, authSvc, accountSvc, coreSvc)
         {
             if (authSvc.isAuthenticated())
                 $location.path('/reservation');
@@ -19,12 +19,11 @@ angular.
                     if (response)
                         $location.path('/reservation');
                     else
-                        self.Message = "Invalid user. Please, enter a valid credentials";
+                        coreSvc.distributeMessage('Warning','Invalid user. Please, enter a valid credentials');
                 }, 
                 function (response)
                 {
-                    console.log(response);
-                    self.Message = 'There was an error validating user: ' + response;
+                    coreSvc.distributeMessage('Error','There was an error validating user', response);
                 });
             };
             

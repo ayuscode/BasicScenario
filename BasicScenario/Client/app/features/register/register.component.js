@@ -4,9 +4,8 @@ angular.
         templateUrl : 'features/register/register.template.html',
         controller : ['accountSvc','coreSvc', function(accountSvc, coreSvc)
         {
+            coreSvc.clearMessage();
             var self = this;
-
-            this.Message = '';
             this.IsRegistered = false;
 
             this.Register = function() {
@@ -14,16 +13,16 @@ angular.
                     function(response){
                         if (response)
                             self.IsRegistered = true;
-                        else   
-                            self.Message = 'Unexpected error when registering. Please, try again';
+                        else
+                            coreSvc.distributeMessage('Warning','Unexpected error when registering. Please, try again');
                     },
                     function (response) {
-                        self.Message = 'Unable to register:' + coreSvc.parseResponse(response);
+                        coreSvc.distributeMessage('Error','Unable to register', response);
                     }
-                );                 
+                );              
             };
 
-
+            
             
         }]
     });

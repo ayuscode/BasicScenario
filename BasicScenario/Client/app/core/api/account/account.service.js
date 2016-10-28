@@ -49,26 +49,21 @@ angular.
 
         this.getUser = function()
         {
-            if (authSvc.isAuthenticated())
-            {
-                $http.get(baseUrl + 'user', 
-                {
-                    headers : {
-                                "accept": "application/json",
-                                "content-type": "application/json",
-                                "authorization": "Bearer " + authSvc.token
-                    }
-                }).then(
-                    function(response)
-                    {
-                        return response.data;
+            var deferred = $q.defer();
+
+            if (authSvc.isAuthenticated()) {
+                $http.get(baseUrl + 'user').then(
+                    function (response) {
+                        deferred.resolve(response.data);
                     },
-                    function(response)
-                    {
-                        return 'Invalid User';
+                    function (response) {
+                        deferred.reject('Invalid User');
                     }
                 );
             }
-            return 'Not Authenticated';
+            else
+                deferred.reject('Not Authenticated');
+
+            return deferred.promise;
         } 
     }]);

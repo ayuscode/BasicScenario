@@ -15,7 +15,6 @@
         </tr>
     </table>
     <br/>
-    <p>{{$ctrl.Message}}</p>
     <input type="submit" name="register" ng-click="$ctrl.Register()" value="Register" ng-show="form.user.$valid && form.pass.$valid && form.confirm.$valid" />
 </form>
 <p ng-show="$ctrl.IsRegistered" name="registered">

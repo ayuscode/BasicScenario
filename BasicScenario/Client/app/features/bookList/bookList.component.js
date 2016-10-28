@@ -4,7 +4,6 @@
         templateUrl: '/features/booklist/booklist.template.html',
         controller: ['bookingSvc','coreSvc', function (bookingSvc, coreSvc) {
             this.reservations = [];
-            this.Message = '';
 
             var self = this;
 
@@ -22,15 +21,12 @@
                         self.reservations = response.data;
                     },
                     function (respose) {
-                        self.Message = coreSvc.parseResponse(response);
+                        coreSvc.distributeMessage('Error', null, response);
                     });
             }
 
             this.updateAllReservations();
 
-        }],
-        bindings: {
-            updateAllReservations : '<'
-        }
+        }]
     });
     

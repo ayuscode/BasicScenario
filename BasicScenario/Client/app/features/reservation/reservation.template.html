@@ -1,4 +1,6 @@
-﻿<p>Welcome to your reservation space</p>
+﻿<user></user>
+
+<p>Welcome to your reservation space</p>
 <p>You have {{$ctrl.reservations.length}} reservations</p>
 <ul>
     <li ng-repeat="item in $ctrl.reservations">{{item | date : 'dd/MM/yyyy'}}</li>
@@ -7,5 +9,3 @@
 <bookdate on-book="$ctrl.updateReservations()"></bookdate>
 <a ng-click="$ctrl.toggleShowAll()">{{$ctrl.toggleMessage}}</a>
 <booklist ng-show="$ctrl.showAll"></booklist>
-
-<p>{{$ctrl.Message}}</p>

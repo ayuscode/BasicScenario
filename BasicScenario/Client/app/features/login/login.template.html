@@ -1,13 +1,15 @@
-<table>
-    <tr>
-        <td><label>User</label></td>
-        <td><input ng-model="$ctrl.User"/></td>
-    </tr>
-    <tr>
-        <td><label>Password</label></td>
-        <td><input type="password" ng-model="$ctrl.Password"/></td>
-    </tr>
-</table>
-<button ng-click="$ctrl.Login()">Login</button><br/>or<br/>
-<a ng-href="/#!/newregister">Register</a>
-<h6>{{$ctrl.Message}}</h6>
+<form>
+    <table>
+        <tr>
+            <td><label>User</label></td>
+            <td><input ng-model="$ctrl.User" /></td>
+        </tr>
+        <tr>
+            <td><label>Password</label></td>
+            <td><input type="password" ng-model="$ctrl.Password" /></td>
+        </tr>
+    </table>
+    <input type="submit" ng-click="$ctrl.Login()" value="Login" /><br />or<br />
+    <a ng-href="/#!/newregister">Register</a>
+    <h6>{{$ctrl.Message}}</h6>
+</form>

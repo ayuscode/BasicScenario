@@ -12,9 +12,7 @@ angular.
 
             // Data format in this way because the grant_type=password mode 
             var data = "userName=" + user + "&password=" + password + "&grant_type=password"
-            $http.post(baseUrl, data, {
-                headers: { 'Access-Control-Allow-Origin': '*' }
-            }).then(function (response) {
+            $http.post(baseUrl, data).then(function (response) {
                 authSvc.setToken(response.data.access_token, response.data.expires_in);
                 deferred.resolve(true);
             }, function (response) {

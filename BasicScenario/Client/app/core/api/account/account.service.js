@@ -1,6 +1,6 @@
 angular.
     module('account').
-    service('accountSvc', ['$http', 'authSvc', '$q', function($http, authSvc, $q){
+    service('accountSvc', ['$http', 'authSvc', '$q', 'coreSvc', function($http, authSvc, $q, coreSvc){
         var baseUrl = 'http://localhost:35853/api/account/';
 
         this.validate = function (user, password) {
@@ -12,10 +12,9 @@ angular.
 
             // Data format in this way because the grant_type=password mode 
             var data = "userName=" + user + "&password=" + password + "&grant_type=password"
-            $http.post(baseUrl, data, {
-                headers: { 'Access-Control-Allow-Origin': '*' }
-            }).then(function (response) {
+            $http.post(baseUrl, data).then(function (response) {
                 authSvc.setToken(response.data.access_token, response.data.expires_in);
+                coreSvc.userChanged();
                 deferred.resolve(true);
             }, function (response) {
                 authSvc.clear();

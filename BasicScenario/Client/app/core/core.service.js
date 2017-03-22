@@ -3,6 +3,7 @@
     factory('coreSvc', function () {
         // Here we can add some code (factory vs service)
         var callbackMessages = [];
+        var callbackUser = [];
         var self = this;
 
         function parse(response)
@@ -53,6 +54,16 @@
             clearMessage: function () {
                 angular.forEach(callbackMessages, function (value, key) {
                     value(null, null, null);
+                })
+            },
+
+            onUserChanged: function (callback) {
+                callbackUser.push(callback);
+            },
+
+            userChanged: function() {
+                angular.forEach(callbackUser, function(value, key) {
+                    value();
                 })
             }
         }

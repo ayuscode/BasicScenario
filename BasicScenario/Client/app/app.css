@@ -10,3 +10,30 @@ body {
 .css-form input.ng-valid.ng-touched {
     background-color: #78FA89;
 }
+
+.divMain
+{
+    background-color: #78FA89;
+    height: 667px;
+}
+
+.divBackground
+{
+    background-color: #6acd55;
+}
+
+.divMessages
+{
+    background-color: red;
+}
+
+.divUser
+{
+    background-color: #f5f5dc;
+    text-align : right;
+}
+
+.divView
+{
+    clear: both;
+}

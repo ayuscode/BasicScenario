@@ -1,6 +1,7 @@
 angular.
     module('basicScenario',
             ['ngRoute',
+             'ngAnimate',
              'core',
              'login',
              'register',
@@ -8,5 +9,6 @@ angular.
              'bookdate',
              'booklist',
              'messages',
-             'user'
+             'user',
+             'ui.bootstrap'
             ]);

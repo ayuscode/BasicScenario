@@ -1,1 +1,3 @@
-﻿<p><b>{{$ctrl.User}}</b> (<a ng-click="$ctrl.logout()">Logout</a>)</p>
+﻿<div ng-show="$ctrl.IsLogin">
+<p><b>{{$ctrl.User}}</b> (<a ng-click="$ctrl.logout()">Logout</a>)</p>
+</div>

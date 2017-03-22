@@ -1,2 +1,2 @@
 angular.
-    module('account', []);
+    module('account', ['core']);

@@ -1,15 +1,38 @@
-<form>
-    <table>
-        <tr>
-            <td><label>User</label></td>
-            <td><input ng-model="$ctrl.User" /></td>
-        </tr>
-        <tr>
-            <td><label>Password</label></td>
-            <td><input type="password" ng-model="$ctrl.Password" /></td>
-        </tr>
-    </table>
-    <input type="submit" ng-click="$ctrl.Login()" value="Login" /><br />or<br />
-    <a ng-href="/#!/newregister">Register</a>
-    <h6>{{$ctrl.Message}}</h6>
-</form>
+<div class="loginTemplate">
+    <form>
+        <div style="background-color: gray">
+            <svg width="50px" height="51px" viewBox="50 0 50 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+                <desc>Created with Sketch.</desc>
+                <defs>
+                    <path d="M20,22 C13.25,22 0,25.33125 0,32.25 L0,37.375 L40,37.375 L40,32.25 C40,25.33125 26.75,22 20,22 L20,22 Z M20,18 C24.95,18 29,13.95 29,9 C29,4.05 24.95,0 20,0 C15.05,0 11,4.05 11,9 C11,13.95 15.05,18 20,18 L20,18 Z"
+                        id="path-1"></path>
+                        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="40" height="37.375"
+                            fill="white">
+                            <use xlink:href="#path-1"></use>
+                            </mask>
+                </defs>
+                <g id="username" opacity="0.6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(50.000000, 0.948000)">
+                    <g id="group" transform="translate(5.000000, 6.000000)" stroke="#FFFFFF" stroke-width="4">
+                        <use id="shape" mask="url(#mask-2)" xlink:href="#path-1"></use>
+                    </g>
+                    <rect id="bounds" x="0" y="0" width="50" height="50"></rect>
+                </g>
+            </svg>
+        </div>
+        <br/>
+        <table>
+            <tr>
+                <td><label>User</label></td>
+                <td><input ng-model="$ctrl.User" /></td>
+            </tr>
+            <tr>
+                <td><label>Password</label></td>
+                <td><input type="password" ng-model="$ctrl.Password" /></td>
+            </tr>
+        </table>
+        <input type="submit" ng-click="$ctrl.Login()" value="Login" /><br />or<br />
+        <a ng-href="/#!/newregister">Register</a>
+        <h6>{{$ctrl.Message}}</h6>
+    </form>
+</div>

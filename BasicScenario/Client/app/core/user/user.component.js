@@ -5,8 +5,11 @@
         controller: ['coreSvc', 'authSvc', 'accountSvc', '$location', function (coreSvc, authSvc, accountSvc, $location) {
             var self = this;
 
-            this.User = ''
+            self.User = ''
+            self.IsLogin = false;
+
             this.logout = function () {
+                self.IsLogin = false;
                 authSvc.clear();
                 $location.path('/');
             }
@@ -15,11 +18,14 @@
                 accountSvc.getUser().then(
                     function (response) {
                         self.User = response;
+                        self.IsLogin = true;
                     },
                     function (response) {
-                        coreSvc.distributeMessage('Error', null, response);
+                        self.IsLogin = false;
                     })
             }
+
+            coreSvc.onUserChanged(self.updateUser);
 
             this.updateUser();
         }]

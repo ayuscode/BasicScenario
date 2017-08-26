@@ -11,4 +11,7 @@ A basic solution implementation for a very simple booking system using:
 - Serilog and ELMAH
 - Automated build and test using AppVeyor
 
-At the moment UI is intentionally poor (Basic HTML & JS) in order to separate UI and Backend. Future development to rich user interface.
+At the moment UI is intentionally poor (Basic HTML & JS) in master branch in order to separate UI and Backend. 
+Added angularjs in angular-js branch.
+
+Future dev in angularjs-ui for a better UI interface.
